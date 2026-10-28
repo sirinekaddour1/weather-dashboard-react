@@ -1,0 +1,205 @@
+* {
+  box-sizing: border-box; /* include padding and border in the total size */
+}
+
+/* Style the whole page */
+body {
+  margin: 0; /* remove the default margin */
+  font-family: Arial, sans-serif; /* set the font */
+  background: linear-gradient(135deg, #dbeafe, #f0f9ff); /* add a light blue background */
+  min-height: 100vh; /* make the page at least as tall as the screen */
+  color: #1e293b; /* set the default text color */
+}
+
+/* Style the main container */
+.container {
+  width: 90%; /* use 90% of the available width */
+  max-width: 700px; /* limit the maximum width */
+  margin: 50px auto; /* add space and center the container */
+  padding: 30px; /* add space inside the container */
+  background: rgb(252, 252, 252); /* set a white background */
+  border-radius: 20px; /* make the corners rounded */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); /* add a soft shadow */
+}
+
+/* Style the header */
+header {
+  text-align: center; /* center the header text */
+  margin-bottom: 30px; 
+}
+
+/* Style the main title */
+h1 {
+  color: #2563eb; /* make the title blue */
+}
+
+/* Style the description under the title */
+header p {
+  color: #64748b; 
+}
+
+/* Style the input label */
+label {
+  display: block; /* put the label on its own line */
+  margin-bottom: 10px; 
+  font-weight: bold; /* make the label bold */
+}
+
+/* Style the search container */
+.search-box {
+  display: flex; /* put the input and button next to each other */
+  gap: 10px; /* add space between them */
+}
+
+/* Style the city input */
+input {
+  flex: 1; /* let the input take the available space */
+  min-width: 0; /* allow the input to shrink on small screens */
+  padding: 14px; /* add space inside the input */
+  border: 1px solid #cbd5e1; /* add a light gray border */
+  border-radius: 8px; /* round the corners */
+  font-size: 16px; 
+}
+
+/* Style the buttons */
+button {
+  padding: 14px 20px; 
+  background: #2563eb; /* make the button blue */
+  color: white; /* make the text white */
+  border: none; /* remove the default border */
+  border-radius: 8px; 
+  cursor: pointer; /* show a hand when hovering */
+}
+
+/* Change the button color when hovering */
+button:hover {
+  background: #1d4ed8; 
+}
+
+/* Style the disabled button */
+button:disabled {
+  opacity: 0.6; /* make the button look faded */
+  cursor: not-allowed; /* show that the button cannot be clicked */
+}
+
+/* Style the loading and error message area */
+#status {
+  margin-top: 20px; /* add space above the message */
+  text-align: center; 
+}
+
+/* Style the loading message */
+#status[data-state="loading"] {
+  color: #2563eb; 
+}
+
+/* Style the error message */
+#status[data-state="error"] {
+  color: #dc2626; /* display errors in red */
+  font-weight: bold; /* make the error message bold */
+}
+
+/* Style the retry button */
+#retry-btn {
+  display: block; 
+  margin: 10px auto; /* center the button horizontally */
+}
+
+/* Style the weather results section */
+#weather-result {
+  margin-top: 25px; /* add space above the results */
+  padding: 25px; /* add space inside the section */
+  background: #eff6ff; 
+  border-radius: 15px;
+  text-align: center; 
+}
+
+/* Style the current weather container */
+.current-weather {
+  display: flex; /* put the icon and temperature side by side */
+  align-items: center; /* align them vertically */
+  justify-content: center; /* center them horizontally */
+  gap: 25px; 
+  margin: 20px 0; /* add space above and below */
+}
+
+/* Style the weather icon */
+#weather-icon {
+  font-size: 65px; 
+}
+
+/* Style the temperature */
+#temperature {
+  font-size: 42px; 
+  margin: 0; 
+}
+
+/* Style the weather description */
+#description {
+  color: #475569;
+}
+
+/* Organize the additional weather details */
+.details {
+  display: grid; 
+  grid-template-columns: repeat(3, 1fr); /* create three equal columns */
+  gap: 15px; /* add space between the cards */
+}
+
+/* Style each weather detail card */
+.detail-card {
+  background: white; 
+  padding: 15px; 
+  border-radius: 12px; 
+}
+
+/* Style the titles inside the cards */
+.detail-card h4 {
+  color: #64748b; 
+  font-size: 14px; 
+}
+
+/* Style the values inside the cards */
+.detail-card p {
+  font-size: 18px; 
+  font-weight: bold; 
+}
+
+/* Style the footer */
+footer {
+  text-align: center; /* center the footer text */
+  margin-top: 30px; /* add space above the footer */
+  color: #64748b;
+  font-size: 13px; 
+}
+
+/* Hide elements that have the hidden attribute */
+[hidden] {
+  display: none !important; /* keep hidden elements invisible */
+}
+
+/* Change the layout on small screens */
+@media (max-width: 600px) {
+
+  /* Adjust the main container for mobile */
+  .container {
+    width: 95%; /* use more space on small screens */
+    margin: 20px auto; /* reduce the outside margin */
+    padding: 20px; /* reduce the inside padding */
+  }
+
+  /* Put the input and button on separate lines */
+  .search-box {
+    flex-direction: column; /* arrange elements vertically */
+  }
+
+  /* Display weather details in one column */
+  .details {
+    grid-template-columns: 1fr; 
+  }
+
+  /* Reduce the space in the current weather section */
+  .current-weather {
+    gap: 15px; 
+  }
+}
